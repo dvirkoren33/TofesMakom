@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- פלטת הצבעים של תופס מקום -->
+    <color name="primary_navy">#1A2530</color>      <!-- כחול נייבי עמוק לרקע/כותרות -->
+    <color name="accent_teal">#00B4D8</color>       <!-- טורקיז עז לכפתורים ודגשים -->
+    <color name="accent_teal_dark">#0077B6</color>  <!-- טורקיז כהה לאפקטים -->
+    <color name="bg_light">#F8F9FA</color>          <!-- רקע בהיר ונקי -->
+    <color name="card_bg">#FFFFFF</color>           <!-- לבן נקי לכרטיסיות -->
+    <color name="text_dark">#2B2D42</color>         <!-- טקסט כהה ומודרני -->
+    <color name="text_secondary">#8D99AE</color>    <!-- טקסט משני משלים -->
+</resources>
