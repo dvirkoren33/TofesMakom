@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- Layout ראשי בצורת LinearLayout אנכי שסודר את כל הרכיבים מלמעלה למטה -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp"
-    tools:context=".GameActivity"
+    android:padding="16dp">
 
-    >
-
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="240dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="32dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/img" />
-
-
+    <!-- הודעת ברכה ושם השחקן -->
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="טוען..."
-        android:textSize="22sp"
+        android:text="בהצלחה! המשחק מתחיל..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- תיבת הקלדה להזנת שם היישוב -->
+    <EditText
+        android:id="@+id/etCityGuess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הקלד שם של יישוב..."
+        android:inputType="textPersonName"
+        android:textSize="16sp" />
 
-        />
+    <!-- כפתור שליחת ניחוש לבדיקה -->
+    <Button
+        android:id="@+id/btnSubmitGuess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="שלח ניחוש"
+        android:layout_marginTop="8dp" />
+
+    <!-- רכיב ה-RecyclerView המציג את הניחושים התקנים של השחקן -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGuesses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
