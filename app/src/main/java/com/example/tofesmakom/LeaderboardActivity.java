@@ -1,5 +1,7 @@
 package com.example.tofesmakom;
+
 import android.os.Bundle;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,18 +19,24 @@ public class LeaderboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-        // חיבור ה-RecyclerView מה-XML
         rvLeaderboard = findViewById(R.id.rvLeaderboard);
         rvLeaderboard.setLayoutManager(new LinearLayoutManager(this));
 
-        // נתוני דמי לבדיקת הרשימה
+        // הזנת נתוני דמי
         scoreList = new ArrayList<>();
-        scoreList.add(new ScoreItem("דביר קורן", 1500, "01/11/2026"));
-        scoreList.add(new ScoreItem("אריאל קורן", 1250, "31/10/2026"));
-        scoreList.add(new ScoreItem("ישראל ישראלי", 900, "30/10/2026"));
+        scoreList.add(new ScoreItem("דניאל שרעבי", 1500, "01/11/2026"));
+        scoreList.add(new ScoreItem("עדי מורג", 1250, "31/10/2026"));
+        scoreList.add(new ScoreItem("עידו לוי", 900, "30/10/2026"));
 
-        // חיבור ה-Adapter ל-RecyclerView
+        // מיון הרשימה מהניקוד הגבוה ביותר לנמוך ביותר
+        scoreList.sort((item1, item2) -> Integer.compare(item2.getScore(), item1.getScore()));
+
+        // חיבור ל-Adapter לאחר המיון
         adapter = new LeaderboardAdapter(scoreList);
         rvLeaderboard.setAdapter(adapter);
+
+        // כפתור חזרה לתפריט הראשי
+        Button btnBackToMain = findViewById(R.id.btnBackToMain);
+        btnBackToMain.setOnClickListener(v -> finish());
     }
 }
