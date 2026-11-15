@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Layout ראשי בצורת LinearLayout אנכי שסודר את כל הרכיבים מלמעלה למטה -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -7,18 +6,39 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- הודעת ברכה ושם השחקן -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="בהצלחה! המשחק מתחיל..."
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="8dp"/>
 
-    <!-- תיבת הקלדה להזנת שם היישוב -->
+    <TextView
+        android:id="@+id/tvChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="אתגר: יישוב באזור המרכז"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1565C0"
+        android:background="#E3F2FD"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvCurrentScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ניקוד נוכחי: 0"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"/>
+
     <EditText
         android:id="@+id/etCityGuess"
         android:layout_width="match_parent"
@@ -27,7 +47,6 @@
         android:inputType="textPersonName"
         android:textSize="16sp" />
 
-    <!-- כפתור שליחת ניחוש לבדיקה -->
     <Button
         android:id="@+id/btnSubmitGuess"
         android:layout_width="match_parent"
@@ -35,12 +54,20 @@
         android:text="שלח ניחוש"
         android:layout_marginTop="8dp" />
 
-    <!-- רכיב ה-RecyclerView המציג את הניחושים התקנים של השחקן -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGuesses"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnFinishGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="סיים משחק ושמור שיא בענן"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp" />
 
 </LinearLayout>
